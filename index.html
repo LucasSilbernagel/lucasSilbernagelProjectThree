@@ -7,11 +7,14 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+    <div class="clicker" id="clicker">
         <h1>Speedy Click!</h1>
-        <p>Click the Start button, and you will have 10 seconds to click the Clicker button as many times as possible.</p>
-        <button id="start">Start!</button>
-        <button id="clicker">Clicker</button>
-        <section class="results" id="results"></section>
+        <Click class="instructions" id="instructions">Click the Start button, and you will have 10 seconds to click as many times as possible.</p>
+        <button id="start" class="start">Start!</button>
+        <section class="resultsContainer" id="resultsContainer">
+            <p class="results" id="results"></p>
+        </section>
+    </div>
     <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
     <script src="script.js"></script>
 </body>

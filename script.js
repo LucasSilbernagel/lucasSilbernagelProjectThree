@@ -13,16 +13,17 @@ $("#start").on("click", function () {
 
     // Start timer
     let timeleft = 10;
-    let downloadTimer = setInterval(function () {
+    let timer = setInterval(function () {
         if (timeleft <= 0) {
-            clearInterval(downloadTimer);
+            clearInterval(timer);
             $("#start").html(`Start!`)
+            $("#countdown").html(``)
 
             // Display score
             $("#results").html(`You got ${score} clicks, an average of ${average} clicks per second!`)
-            
+
         } else {
-            document.getElementById("start").innerHTML = timeleft + " seconds remaining";
+            $("#results").html(`${timeleft} seconds remaining`)
         }
         timeleft -= 1;
     }, 1000);
