@@ -14,6 +14,9 @@ $("#start").on("click", function () {
     // Hide start button when clicked
     $("#start").attr("style", "visibility:hidden");
 
+    // Update instructions
+    $("#instructions").html(`Click anywhere!`)
+
     // Start timer
     let timeleft = 10;
     let timer = setInterval(function () {
@@ -25,6 +28,9 @@ $("#start").on("click", function () {
 
             // Display score
             $("#results").html(`You got ${score} clicks, an average of ${average} clicks per second!`)
+
+            // Reset instructions
+            $("#instructions").html(`Click the Start button, and you will have 10 seconds to click as many times as possible.`)
 
         } else {
             $("#results").html(`${timeleft} seconds remaining`)
