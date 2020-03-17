@@ -41,10 +41,14 @@ $("#start").on("click", function () {
 
 });
 
-// Log number of clicks to score
-$("#clicker").on("click", function () {
+function increaseScore() {
     score = score + 1;
     average = score / 10;
+}
+
+// Log number of clicks to score
+$("#clicker").on("click", function () {
+    increaseScore();
 });
 
 // Document ready
