@@ -16,6 +16,10 @@ $("#start").on("click", function () {
 
     // Update instructions
     $("#instructions").html(`Click anywhere!`)
+    $("#instructions").attr("style", "animation: blinkingText 1s infinite;");
+
+    // Turn cursor into pointer
+    $("#clicker").attr("style", "cursor:pointer");
 
     // Start timer
     let timeleft = 10;
@@ -28,12 +32,18 @@ $("#start").on("click", function () {
 
             // Display score
             $("#results").html(`You got ${score} clicks, an average of ${average} clicks per second!`)
+            $("#results").attr("style", "background-color: #87CEFA;");
 
             // Reset instructions
-            $("#instructions").html(`Click the Start button, and you will have 10 seconds to click as many times as possible.`)
+            $("#instructions").html(`Click the Start button, and you will have 10 seconds to click your screen as many times as possible. Good luck!`)
+            $("#instructions").attr("style", "animation: none;");
+
+            // Change cursor back to arrow
+            $("#clicker").attr("style", "cursor:arrow");
 
         } else {
             $("#results").html(`${timeleft} seconds remaining`)
+            $("#results").attr("style", "background-color: none;");
         }
 
         timeleft -= 1;
