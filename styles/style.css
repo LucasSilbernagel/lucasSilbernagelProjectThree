@@ -259,7 +259,8 @@ h1 {
   font-size: 2.5rem;
 }
 
-.start {
+.start,
+.again {
   width: 200px;
   height: 75px;
   background: #90EE90;
@@ -267,7 +268,12 @@ h1 {
           box-shadow: 5px 10px;
 }
 
-.start:hover {
+.again {
+  display: none;
+}
+
+.start:hover,
+.again:hover {
   background: #66CDAA;
   cursor: pointer;
 }
@@ -279,10 +285,10 @@ h1 {
 
 @-webkit-keyframes blinkingText {
   0% {
-    color: #000;
+    color: #000000;
   }
   49% {
-    color: #000;
+    color: #000000;
   }
   60% {
     color: transparent;
@@ -291,16 +297,16 @@ h1 {
     color: transparent;
   }
   100% {
-    color: #000;
+    color: #000000;
   }
 }
 
 @keyframes blinkingText {
   0% {
-    color: #000;
+    color: #000000;
   }
   49% {
-    color: #000;
+    color: #000000;
   }
   60% {
     color: transparent;
@@ -309,6 +315,6 @@ h1 {
     color: transparent;
   }
   100% {
-    color: #000;
+    color: #000000;
   }
 }
