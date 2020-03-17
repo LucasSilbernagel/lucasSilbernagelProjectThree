@@ -11,11 +11,15 @@ $("#start").on("click", function () {
     average = 0;
     $("#results").html(``)
 
+    // Hide start button when clicked
+    $("#start").attr("style", "visibility:hidden");
+
     // Start timer
     let timeleft = 10;
     let timer = setInterval(function () {
         if (timeleft <= 0) {
             clearInterval(timer);
+            $("#start").attr("style", "visibility:visible");
             $("#start").html(`Start!`)
             $("#countdown").html(``)
 
@@ -25,6 +29,7 @@ $("#start").on("click", function () {
         } else {
             $("#results").html(`${timeleft} seconds remaining`)
         }
+
         timeleft -= 1;
     }, 1000);
 
