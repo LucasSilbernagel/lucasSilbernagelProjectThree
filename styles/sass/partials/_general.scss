@@ -49,3 +49,16 @@ h1 {
     100%{   color: $text;    }
 }
 
+.countdownBar {
+    animation: slide 10s normal forwards;
+    border-radius: 100px;
+    background: $bar;
+    height: 30px;
+    width: 0;
+    display: none;
+}
+
+@keyframes slide {
+    0% { width: 100%; }
+    100% { width: 0; }
+}
