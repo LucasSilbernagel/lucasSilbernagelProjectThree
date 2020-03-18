@@ -24,11 +24,17 @@ $("#start").on("click", function () {
     // Start timer
     let timeleft = 10;
     let timer = setInterval(function () {
+
+        // Start countdown bar animation
+        $(".countdownBar").attr("style", "display: inline-block;");
+
         if (timeleft <= 0) {
 
             clearInterval(timer);
-            // $("#start").html(`Start!`)
             $("#countdown").html(``)
+
+            // Hide countdown bar animation
+            $(".countdownBar").attr("style", "display: none;");
 
             // Display score
             $("#results").html(`You got ${score} clicks, an average of ${average} clicks per second!`)
@@ -45,6 +51,8 @@ $("#start").on("click", function () {
 
             // Change cursor back to arrow
             $("#clicker").attr("style", "cursor:arrow");
+
+            alert("Time's up!")
 
         } else {
             $("#results").html(`${timeleft} seconds remaining`)
