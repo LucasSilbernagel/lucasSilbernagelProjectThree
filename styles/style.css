@@ -236,7 +236,6 @@ html {
 }
 
 body {
-  height: 100vh;
   font-family: 'Poppins', sans-serif;
   font-size: 1.5rem;
   color: #000000;
@@ -253,6 +252,11 @@ body {
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 20px;
+}
+
+.wrapper {
+  max-width: 660px;
+  margin: 0 auto;
 }
 
 h1 {
@@ -326,7 +330,6 @@ h1 {
   border-radius: 100px;
   background: #FF0000;
   height: 30px;
-  width: 0;
   display: none;
 }
 
