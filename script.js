@@ -78,8 +78,13 @@ function increaseScore() {
 }
 
 // Log number of clicks to score
-$("#clicker").on("click", function () {
-    increaseScore();
+$("#clicker").on("click", increaseScore);
+
+// Can use spacebar instead of mouse to log "clicks"
+$("body").keydown (function (event) {
+    if (event.keyCode === 32) {
+        increaseScore();
+    }
 });
 
 // Document ready
