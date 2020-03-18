@@ -69,7 +69,7 @@ $("#again").on("click", function () {
     $("#start").attr("style", "display: inline-block;");
     $("#results").html(``)
     $("#twitter").html(``);
-    $("#instructions").html(`Click the Start button, and you will have 10 seconds to click your screen as many times as possible. Good luck!`)
+    $("#instructions").html(`Click the Start button, and you will have 10 seconds to click your screen as many times as possible. You can use your mouse, spacebar, or touch screen. Good luck!`)
 });
 
 function increaseScore() {
