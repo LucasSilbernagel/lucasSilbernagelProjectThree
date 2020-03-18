@@ -37,7 +37,8 @@ h1 {
     cursor: pointer;
 }
 
-.start:active {
+.start:active,
+.again:active {
     box-shadow: none;
 }
 
