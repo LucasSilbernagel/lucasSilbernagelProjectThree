@@ -5,13 +5,15 @@ let average = 0;
 speedyClick.init = function () {
 }
 
-// On click, reset score
+// On Start button click
 $("#start").on("click", function () {
+
+    // Reset score
     score = 0;
     average = 0;
     $("#results").html(``)
 
-    // Hide start button when clicked
+    // Hide Start button 
     $("#start").attr("style", "display: none");
 
     // Update instructions
@@ -28,8 +30,10 @@ $("#start").on("click", function () {
         // Start countdown bar animation
         $(".countdownBar").attr("style", "display: inline-block;");
 
+        // When time runs out
         if (timeleft <= 0) {
 
+            // Stop countdown
             clearInterval(timer);
             $("#countdown").html(``)
 
@@ -43,6 +47,7 @@ $("#start").on("click", function () {
             // Load Twitter button
             $("#twitter").html(`<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I just got a new high score on Speedy Click! Think you can beat my score?" data-url="https://lucassilbernagel.github.io/lucasSilbernagelProjectThree/" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>`);
 
+            // Display Try Again button
             $(".again").attr("style", "display: inline-block;");
 
             // Reset instructions
@@ -54,6 +59,7 @@ $("#start").on("click", function () {
 
             alert("Time's up!")
 
+            // While countdown is running
         } else {
             $("#results").html(`${timeleft} seconds remaining`)
             $("#results").attr("style", "background-color: none;");
@@ -64,6 +70,12 @@ $("#start").on("click", function () {
 
 });
 
+// When Try Again button is clicked
+// Hide Try Again button
+// Display Start button
+// Reset results
+// Hide Twitter button
+// Reset instructions
 $("#again").on("click", function () {
     $(".again").attr("style", "display: none;");
     $("#start").attr("style", "display: inline-block;");
@@ -77,10 +89,10 @@ function increaseScore() {
     average = score / 10;
 }
 
-// Log number of clicks to score
+// Log number of clicks to increase score
 $("#clicker").on("click", increaseScore);
 
-// Can use spacebar instead of mouse to log "clicks"
+// Can use spacebar instead of mouse to log "clicks" and increase score
 $("body").keydown (function (event) {
     if (event.keyCode === 32) {
         increaseScore();
