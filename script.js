@@ -61,6 +61,7 @@ $("#start").on("click", function () {
 
             // While countdown is running
         } else {
+            // Display seconds remaining
             $("#results").html(`${timeleft} seconds remaining`)
             $("#results").attr("style", "background-color: none;");
         }
@@ -71,16 +72,21 @@ $("#start").on("click", function () {
 });
 
 // When Try Again button is clicked
-// Hide Try Again button
-// Display Start button
-// Reset results
-// Hide Twitter button
-// Reset instructions
 $("#again").on("click", function () {
+
+    // Hide Try Again button
     $(".again").attr("style", "display: none;");
+
+    // Display Start button
     $("#start").attr("style", "display: inline-block;");
+
+    // Reset results
     $("#results").html(``)
+
+    // Hide Twitter button
     $("#twitter").html(``);
+
+    // Reset instructions
     $("#instructions").html(`Click the Start button, and you will have 10 seconds to click your screen as many times as possible. You can use your mouse, spacebar, or touch screen. Good luck!`)
 });
 
