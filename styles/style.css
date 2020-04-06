@@ -326,8 +326,8 @@ h1 {
 }
 
 .countdownBar {
-  -webkit-animation: slide 10s normal forwards;
-          animation: slide 10s normal forwards;
+  -webkit-animation: slide 11s normal forwards;
+          animation: slide 11s normal forwards;
   border-radius: 100px;
   background: #FF0000;
   height: 30px;
