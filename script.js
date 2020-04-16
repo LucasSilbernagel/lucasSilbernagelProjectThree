@@ -89,26 +89,10 @@ speedyClick.startGame = function () {
 };
 
 speedyClick.tryAgain = function () {
-    
     // When Try Again button is clicked
     $("#again").on("click", function () {
-        
-        // Hide Try Again button
-        $(".again").attr("style", "display: none;");
-
-        // Display Start button
-        $("#start").attr("style", "display: inline-block;");
-
-        // Reset results
-        $("#results").html(``);
-
-        // Hide Twitter button
-        $("#twitter").html(``);
-
-        // Reset instructions
-        $("#instructions").html(
-            `Click the Start button, and you will have 10 seconds to click your screen as many times as possible. You can use your mouse, spacebar, or touch screen. Good luck!`
-        );
+        // Reload the page
+        location.reload();
     });
 };
 
