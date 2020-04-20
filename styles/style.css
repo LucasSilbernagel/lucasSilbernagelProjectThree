@@ -221,20 +221,6 @@ html {
           box-sizing: inherit;
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  -webkit-clip-path: inset(100%);
-          clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
 body {
   font-family: 'Poppins', sans-serif;
   font-size: 1.5rem;
@@ -350,10 +336,6 @@ h1 {
   100% {
     width: 0;
   }
-}
-
-footer {
-  text-align: center;
 }
 
 footer a {

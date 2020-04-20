@@ -1,14 +1,26 @@
+// Namespace
 const speedyClick = {};
+
+// Selector cache
+const $results = $("#results"),
+    $start = $("#start"),
+    $footer = $("footer"),
+    $clicker = $("#clicker"),
+    $instructions = $("#instructions"),
+    $countdownBar = $(".countdownBar");
 
 speedyClick.startGame = function () {
     
     // On Start button click
-    $("#start").on("click", function () {
+    $start.on("click", function () {
+
+        // Hide footer
+        $footer.hide();
         
         // Reset score
         let score = 0;
         let average = 0;
-        $("#results").html(``);
+        $results.html(``);
 
         // Function to increase score and calculate average click speed
         function increaseScore() {
@@ -17,7 +29,7 @@ speedyClick.startGame = function () {
         }
 
         // Log number of clicks to increase score
-        $("#clicker").on("click", increaseScore);
+        $clicker.on("click", increaseScore);
 
         // Can use spacebar instead of mouse to log "clicks" and increase score
         $("body").keydown(function(event) {
@@ -27,21 +39,21 @@ speedyClick.startGame = function () {
         });
 
         // Hide Start button while playing the game
-        $("#start").attr("style", "display: none");
+        $start.attr("style", "display: none");
 
         // Update instructions
-        $("#instructions").html(`Click anywhere!`);
-        $("#instructions").attr("style", "animation: blinkingText 1s infinite;");
+        $instructions.html(`Click anywhere!`);
+        $instructions.attr("style", "animation: blinkingText 1s infinite;");
 
         // Turn cursor into pointer
-        $("#clicker").attr("style", "cursor:pointer");
+        $clicker.attr("style", "cursor:pointer");
 
         // Start timer
         let timeleft = 10;
         let timer = setInterval(function () {
             
             // Start countdown bar animation
-            $(".countdownBar").attr("style", "display: inline-block;");
+            $countdownBar.attr("style", "display: inline-block;");
 
             // When time runs out
             if (timeleft <= 0) {
@@ -51,37 +63,40 @@ speedyClick.startGame = function () {
                 $("#countdown").html(``);
 
                 // Hide countdown bar animation
-                $(".countdownBar").attr("style", "display: none;");
+                $countdownBar.attr("style", "display: none;");
 
                 // Load Twitter button
                 $("#twitter").html(
-                    `<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I just got a new high score on Speedy Click! Think you can beat my score?" data-url="https://lucassilbernagel.github.io/lucasSilbernagelProjectThree/" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>`
+                    `<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="I just got a new high score on Speedy Click! Think you can beat my score?" data-url="https://lucassilbernagel.github.io/speedyClick/" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>`
                 );
 
                 // Display score
-                $("#results").html(
+                $results.html(
                     `You got ${score} clicks, an average of ${average} clicks per second!`
                 );
-                $("#results").attr("style", "background-color: #87CEFA;");
+                $results.attr("style", "background-color: #87CEFA;");
 
                 // Display Try Again button
                 $(".again").attr("style", "display: inline-block;");
 
                 // Reset instructions
-                $("#instructions").html(``);
-                $("#instructions").attr("style", "animation: none;");
+                $instructions.html(``);
+                $instructions.attr("style", "animation: none;");
 
                 // Change cursor back to arrow
-                $("#clicker").attr("style", "cursor:arrow");
+                $clicker.attr("style", "cursor:arrow");
 
                 alert("Time's up!");
+
+                // Show footer
+                $footer.show();
 
         // While countdown is still running
         } else {
                 
             // Display seconds remaining
-            $("#results").html(`${timeleft} seconds remaining`);
-            $("#results").attr("style", "background-color: none;");
+            $results.html(`${timeleft} seconds remaining`);
+            $results.attr("style", "background-color: none;");
             }
 
         timeleft -= 1;
@@ -97,7 +112,7 @@ speedyClick.tryAgain = function () {
     });
 };
 
-speedyClick.init = function() {
+speedyClick.init = function () {
     speedyClick.startGame();
     speedyClick.tryAgain();
 };
