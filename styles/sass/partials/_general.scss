@@ -6,6 +6,7 @@ body {
     height: 100vh;
 }
 
+// This section covers the whole screen and is clickable for the game.
 .clicker {
     height: 100%;
     width: 100%;
@@ -24,6 +25,7 @@ h1 {
     font-size: 2.5rem;
 }
 
+// Buttons
 .start,
 .again {
     width: 200px;
@@ -47,6 +49,7 @@ h1 {
     box-shadow: none;
 }
 
+// Blinking text animation
 @keyframes blinkingText{
     0%{     color: $text;    }
     49%{    color: $text; }
@@ -55,6 +58,7 @@ h1 {
     100%{   color: $text;    }
 }
 
+// Countdown bar animation
 .countdownBar {
     animation: slide 11s normal forwards;
     border-radius: 100px;
