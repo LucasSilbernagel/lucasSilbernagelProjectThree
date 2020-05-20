@@ -264,7 +264,9 @@ h1 {
 }
 
 .start:hover,
-.again:hover {
+.start:focus,
+.again:hover,
+.again:focus {
   background: #66CDAA;
   cursor: pointer;
 }
